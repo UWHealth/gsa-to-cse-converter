@@ -20,7 +20,7 @@ def make_xml_string(csv_file):
 		if (c['queries'] and c['url'] and c['title']):
 			promo_lines.append(promotion % c)
 		else:
-			print line;
+			print(line);
 	return start % {"promotion_count":len(promo_lines)} + "".join(promo_lines) + end
 
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     try:
         file_name = sys.argv[1]
         csv_file = csv.reader(open(file_name, 'r+'))
-        print make_xml_string(csv_file)
+        print (make_xml_string(csv_file))
     except IndexError:
-        print "Usage: gsa-to-cse.py <input_file.csv>"
+        print ("Usage: gsa-to-cse.py <input_file.csv>")
         sys.exit(1)
